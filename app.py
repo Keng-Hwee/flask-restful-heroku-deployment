@@ -14,11 +14,6 @@ app.config['PROPAGATE_EXCEPTIONS'] = True
 api = Api(app)
 
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
-
 # Setup flask-jwt-extended
 app.config['JWT_SECRET_KEY'] = 'kh'
 jwt = JWTManager(app)  # creates a new endpoint: /auth
